@@ -323,7 +323,7 @@
 	section#home {
 		margin: 0;
 		padding: 0;
-		background: url('https://source.unsplash.com/bZZp1PmHI0E/1600x900') no-repeat center center/cover;;
+		background: url('https://github.com/Exusai/a-qua/raw/master/imgs/BG1.png') no-repeat center center/cover;;
 	}
 
 	section#about {
