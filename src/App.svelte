@@ -4,7 +4,12 @@
 	import { quintOut } from 'svelte/easing';
 	import { fade, draw, fly } from 'svelte/transition';
 	import { expand } from './custom-transitions.js';
-	import { inner, outer } from './shape.js';
+	import { outer, left, right, middleSquare } from './shape.js';
+	
+	import { onMount } from 'svelte';
+
+	let ready = false;
+	onMount(() => ready = true);
 	
 	var style = document.createElement("style");
 	style.innerHTML = `body::-webkit-scrollbar {display: none;}`;
@@ -50,35 +55,43 @@
 	
 
 	<section id="home">
-		<div class="row">
-			<div class="col-sm">
-				<h1><span id="w1">a</span><span id="w2">-</span><span id="w3">qua</span></h1>
-				<p class="lead">Una solución (hipotética) para la reciente escasez de agua en la Ciudad de México y todo lo que esto implica.</p>
-			</div>
+		<div class="row align-items-center">
 			<div class="col-sm">
 				<div class = "centered">
-					<svg xmlns="/mnt/c/Users/ironm/Desktop/reto01/imgs/Logo.svg" viewBox="0 0 50 50">
-						<!-- <g out:fade="{{duration: 200}}" opacity=0.2>
-							<path
-								in:expand="{{duration: 400, delay: 1000, easing: quintOut}}"
-								style="stroke: #ff3e00; fill: #ff3e00; stroke-width: 50;"
-								d={outer}
-							/>
-							<path
-								in:draw="{{duration: 1000}}"
-								style="stroke:#ff3e00; stroke-width: 1.5"
-								d={inner}
-							/>
-						</g> -->
-					</svg>
-				
-					<!-- <div class="centered" out:fly="{{y: -20, duration: 800}}">
-						{#each 'SVELTE' as char, i}
-							<span
-								in:fade="{{delay: 1000 + i * 150, duration: 800}}"
-							>{char}</span>
-						{/each}
-					</div> -->
+					<h1><span id="w1">a</span><span id="w2">-</span><span id="w3">qua</span></h1>
+					<p class="lead">Una solución (hipotética) para la reciente escasez de agua en la Ciudad de México y todo lo que esto implica.</p>
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="centered">
+					<span id="logo">
+						{#if ready}
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" x="0px" y="0px">
+							<g out:fade="{{duration: 200}}" opacity=1>
+								<path
+									in:expand="{{duration: 500, delay: 1300, easing: quintOut}}"
+									style="stroke: #ffffff; fill: #ffffff; fill-opacity: 1.0; stroke-width: 1.5;"
+									d={outer}
+								/>
+								<path
+									in:draw="{{duration: 1000, delay: 200}}"
+									style="stroke:#ffffff; fill: #000000; fill-opacity: 1.0; stroke-width: 1.5"
+									d={left}
+								/>
+								<path
+									in:draw="{{duration: 1000, delay: 100}}"
+									style="stroke:#ffffff; fill: #000000; fill-opacity: 1.0; stroke-width: 1.5"
+									d={right}
+								/>
+								<path
+									in:draw="{{duration: 1000,}}"
+									style="stroke: #ffffff; fill: #000000; fill-opacity: 1.0; stroke-width: 1.5"
+									d={middleSquare}
+								/>
+							</g>
+						</svg>
+					{/if}
+					</span>
 				</div>
 			</div>
 		</div>
@@ -218,10 +231,15 @@
 		}
 
 	}
+	
 
-	.centered {
+	.centered #logo{
 		left: 50%;
 		top: 50%;
+
+		animation: fade2 5s infinite;
+		animation-fill-mode: both;
+		animation-delay: 1.5s;
 	}
 
 	.top-container {
