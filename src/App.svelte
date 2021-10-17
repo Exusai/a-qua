@@ -27,10 +27,9 @@
 </script>
 
 <svelte:head>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
 
 	<style>
-		/* Global CSS via SASS */
 		body{
 			background: black;
 		}
@@ -42,8 +41,9 @@
 	<nav class="navbar">
 		<div class="top-container">
 			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#about">Acerca de</a></li>
+				<li><a href="#home">Inicio</a></li>
+				<li><a href="#problem">El problema</a></li>
+				<li><a href="#solution">La Solución</a></li>
 				<!-- <li><a href="#servicio">Servicio</a></li> -->
 				<li><a href="https://exusai.github.io/Portfolio/">Otros proyectos</a></li>
 			</ul>
@@ -66,31 +66,47 @@
 				<div class="centered">
 					<span id="logo">
 						{#if ready}
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" x="0px" y="0px">
-							<g out:fade="{{duration: 200}}" opacity=1>
-								<path
-									in:expand="{{duration: 500, delay: 1300, easing: quintOut}}"
-									style="stroke: #ffffff; fill: #ffffff; fill-opacity: 1.0; stroke-width: 1.5;"
-									d={outer}
-								/>
-								<path
-									in:draw="{{duration: 1000, delay: 200}}"
-									style="stroke:#ffffff; fill: #000000; fill-opacity: 1.0; stroke-width: 1.5"
-									d={left}
-								/>
-								<path
-									in:draw="{{duration: 1000, delay: 100}}"
-									style="stroke:#ffffff; fill: #000000; fill-opacity: 1.0; stroke-width: 1.5"
-									d={right}
-								/>
-								<path
-									in:draw="{{duration: 1000,}}"
-									style="stroke: #ffffff; fill: #000000; fill-opacity: 1.0; stroke-width: 1.5"
-									d={middleSquare}
-								/>
-							</g>
-						</svg>
-					{/if}
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" x="0px" y="0px">
+								<g out:fade="{{duration: 200}}" opacity=1>
+									<path
+										in:expand="{{duration: 500, delay: 1300, easing: quintOut}}"
+										style="stroke: #ffffff; fill: #ffffff; fill-opacity: 1.0; stroke-width: 1.5;"
+										d={outer}
+									/>
+									<path
+										in:draw="{{duration: 1000, delay: 600}}"
+										style="stroke:#ffffff; fill: #4287f5; fill-opacity: 0.0; stroke-width: 1.5"
+										d={left}
+									/>
+									<path
+										in:draw="{{duration: 1000, delay: 300}}"
+										style="stroke:#ffffff; fill: #4287f5; fill-opacity: 0.0; stroke-width: 1.5"
+										d={right}
+									/>
+
+									<path
+										in:draw="{{duration: 1000}}"
+										style="stroke: #ffffff; fill: #4287f5; fill-opacity: 0.0; stroke-width: 1.5"
+										d={middleSquare}
+									/>
+									<path
+									in:expand="{{duration: 500, delay: 1500, easing: quintOut}}"
+										style="stroke:#ffffff; fill: #4287f5; fill-opacity: 0.8; stroke-width: 1.5"
+										d={left}
+									/>
+									<path
+									in:expand="{{duration: 500, delay: 1500, easing: quintOut}}"
+										style="stroke:#ffffff; fill: #4287f5; fill-opacity: 0.8; stroke-width: 1.5"
+										d={right}
+									/>
+									<path
+										in:expand="{{duration: 500, delay: 1500, easing: quintOut}}"
+										style="stroke: #ffffff; fill: #4287f5; fill-opacity: 0.8; stroke-width: 1.5"
+										d={middleSquare}
+									/>
+								</g>
+							</svg>
+						{/if}
 					</span>
 				</div>
 			</div>
@@ -100,15 +116,15 @@
 	<!-- diagramas del bideo ese -->
 	<!-- usar ia para recolectar agua -->
 	<!-- usar iot para aumentar la eficiencia de recolectar agua  -->
-	<section id="about">
+	<section id="problem">
 		<div class="row">
 			<div class="col-sm">
 				imagen pro
 			</div>
 			<div class="col-sm">
-				<h2>El problema</h2>
-				<p class="lead">Como todos sabemos, la Ciudad de México se encuentra sobre lo que solía ser el lago de Texcoco.</p>
-				<p class="lead">Sin embargo, el lago se ha secado durante los últimos 500 años. Y la Ciudad ha recurrido a los acuiferos debajo de la misma, causando otro problema.</p>
+				<h2><span id="w1">El </span><span id="w2">problema</span></h2>
+				<p class="lead">Como todos sabemos, la Ciudad de México se encuentra sobre lo que solía ser el lago de Texcoco. Sin embargo, el lago se ha secado durante los últimos 500 años. Y para abastecerce de <b>agua</b>, la Ciudad ha recurrido a los acuiferos debajo de la misma, causando otro problema.</p>
+				<!-- <p class="lead"></p> -->
 			</div>
 		</div>
 	</section>
@@ -116,9 +132,9 @@
 	<section>
 		<div class="row">
 			<div class="col-sm">
-				<h3>Hundimiento</h3>
-				<p class="lead">Como consecuencia de la explotación de los mantos acuiferos, la Ciudad de México se hunde constantemente.</p>
-				<p class="lead">En algunas partes, la ciudad se hunde hasta 0.5 metros anualmente.</p>
+				<h3><span id="w1">Hundimiento</span></h3>
+				<p class="lead">Como consecuencia de la explotación de los mantos acuiferos, la Ciudad de México se hunde constantemente. En algunas partes, la ciudad se hunde hasta 0.5 metros anualmente.</p>
+				<!-- <p class="lead"></p> -->
 			</div>
 			<div class="col-sm">
 				Imagen logo bien cool
@@ -129,17 +145,53 @@
 	<section>
 		<div class="row">
 			<div class="col-sm">
-				img
+				Imagen logo bien cool
 			</div>
 			<div class="col-sm">
-				<h3>Escasez de agua</h3>
-				<p class="lead">Debido a que la superficie de lo que antes era el lago de Texcoco se encuentra en su mayoría cubierta por concreto, el manto acuifero debajo de la ciudad no puede reabastecerse lo suficiente incluso cuando la Ciudad de México recive más lluvia que ciudades famosas por recibir lluvia durante todo el año como Londres.</p>
+				<!-- <h3><span id="w1">Hundimiento</span></h3> -->
+				<p class="lead">Muchos geólogos estiman que para finales del siglo, la Ciudad se habrá hundido entre 20 y 30 metros de donde se encuentra actualmente.</p>
+				<!-- <p class="lead"></p> -->
 			</div>
 		</div>
 	</section>
 
+	<section>
+		<div class="row">
+			<div class="col-sm">
+				<h3><span id="w1">Escasez </span><span id="w2">de </span><span id="w3">agua</span></h3>
+				<p class="lead">Debido a que la Ciudad no puede seguir extrayendo agua de su subsuelo esta importa el 40% de su suminstro de agua a través de un sistema de canales y tuberías.</p>
+			</div>
+			<div class="col-sm">
+				img
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="row">
+			<div class="col-sm">
+				img
+			</div>
+			<div class="col-sm">
+				<p class="lead">Este sistema de canales es tan ineficiente que de cada litro de agua bombeado por el mismo, se estima que más de un tercio se pierde en el transporte. Sin mencionar que el hundimiento de la Ciudad causa que las tuberías se rompan constantemente.</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="row">
+			<div class="col-sm">
+				<h3><span id="w1">Energía</span></h3>
+				<p class="lead">Al tener que importar tanta agua, la Ciudad de México utiliza tanta energía como la Ciudad de Puebla SOLAMENTE para bombear agua.</p>
+			</div>
+			<div class="col-sm">
+				img
+			</div>
+		</div>
+	</section>
+
+
 	<!-- al no poder explotar el agua, la ciudad recurre a un ineficiente sistema de canales, pues estos deben elevar el agua primero, y debido al hundimineto de la ciudad estos se rompen contantemnte -->
-	<!-- de cada litro bombeado por  estas tuberias, se estima que mas de un tercio se perdera en el transporte -->
 	<!-- solución distopica con la nube -->
 	<section id="servicio">
 		<div class="row">
@@ -187,8 +239,12 @@
 		overflow-y: scroll; 
 		scroll-behavior: smooth;
 		scroll-snap-type: y mandatory;
+
+		font-family: 'Roboto';
 		
 	}
+
+	@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 	h1 #w1 {
 		animation: fade2 2s infinite;
@@ -200,8 +256,39 @@
 		animation-fill-mode: both;
 		animation-delay: 1.2s;
 	}
-
 	h1 #w3 {
+		animation: fade2 2s infinite;
+		animation-fill-mode: both;
+		animation-delay: 1.7s;
+	}
+
+	h2 #w1 {
+		animation: fade2 2s infinite;
+		animation-fill-mode: both;
+		animation-delay: .7s;
+	}
+	h2 #w2 {
+		animation: fade2 2s infinite;
+		animation-fill-mode: both;
+		animation-delay: 1.2s;
+	}
+	h2 #w3 {
+		animation: fade2 2s infinite;
+		animation-fill-mode: both;
+		animation-delay: 1.7s;
+	}
+
+	h3 #w1 {
+		animation: fade2 2s infinite;
+		animation-fill-mode: both;
+		animation-delay: .7s;
+	}
+	h3 #w2 {
+		animation: fade2 2s infinite;
+		animation-fill-mode: both;
+		animation-delay: 1.2s;
+	}
+	h3 #w3 {
 		animation: fade2 2s infinite;
 		animation-fill-mode: both;
 		animation-delay: 1.7s;
@@ -229,15 +316,25 @@
 		100% {
 			opacity: .7;
 		}
+	}
 
+	@keyframes fade3 {
+		0% {
+			opacity: .8;
+		}
+		50% {
+			opacity: 1;
+		}
+		100% {
+			opacity: .8
+		}
 	}
 	
-
 	.centered #logo{
 		left: 50%;
 		top: 50%;
 
-		animation: fade2 5s infinite;
+		animation: fade3 5s infinite;
 		animation-fill-mode: both;
 		animation-delay: 1.5s;
 	}
