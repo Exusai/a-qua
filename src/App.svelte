@@ -1,14 +1,15 @@
 <script>
-	//import { Svrollbar } from 'svrollbar'
 	import 'bootstrap/dist/css/bootstrap.min.css';
 	import { quintOut } from 'svelte/easing';
 	import { fade, draw, fly } from 'svelte/transition';
 	import { expand } from './custom-transitions.js';
 	import { outer, left, right, middleSquare } from './shape.js';
-	
 	import { onMount } from 'svelte';
 
 	let ready = false;
+	let y;
+	let altura;
+	let part;
 	onMount(() => ready = true);
 	
 	var style = document.createElement("style");
@@ -24,10 +25,14 @@
 		document.getElementById("myBar").style.width = scrolled + "%";
 	}
 
+	altura = document.documentElement.scrollHeight;
 </script>
 
+<svelte:window bind:scrollY={y} />
+
 <svelte:head>
-	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
+	<title>a-qua</title>
+    <link rel="shortcut icon" type="image/png" href="https://yt3.ggpht.com/ioNSTZrhNFjC0yq5KNfy7INOmZBqR9RAULGKXTlJhjtCaiVHND8Rud6O1sIBxUjXEvw3Yae4=s108-c-k-c0x00ffffff-no-rj"/>
 
 	<style>
 		body{
@@ -41,9 +46,11 @@
 	<nav class="navbar">
 		<div class="top-container">
 			<ul>
+				<!-- <li><p>{y/altura} parte</p></li> -->
 				<li><a href="#home">Inicio</a></li>
 				<li><a href="#problem">El problema</a></li>
 				<li><a href="#solution">La Solución</a></li>
+				<li><a href="#about">Acerca de</a></li>
 				<li><a href="https://exusai.github.io/Portfolio/">Otros proyectos</a></li>
 			</ul>
 			<div class="progress-container">
@@ -113,139 +120,168 @@
 	</section>
 
 	<section id="problem">
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/Mapa.png" alt="Mapa">
+		{#if y/altura > 1}
+			<div class="row align-items-center" in:fly={{delay: 100, y: (altura)}} out:fly={{y: (altura)}}>
+				<div class="col-sm">
+					<!-- <LazyImage src="https://github.com/Exusai/a-qua/raw/master/imgs/Mapa.png" alt="Mapa"  placeholder="https://via.placeholder.com/400/000000/FFFFFF/?text=Mapa"/> -->
+					<img src="imgs/Mapa.png" alt="Mapas">
+				</div>
+				<div class="col-sm">
+					<h2><span id="w1">El </span><span id="w2">problema</span></h2>
+					<p class="lead">Como todos sabemos, la Ciudad de México se encuentra sobre lo que solía ser el lago de Texcoco. Sin embargo, el lago se ha secado durante los últimos 500 años. Y para abastecerce de agua, la Ciudad ha recurrido a los acuiferos debajo de la misma, causando otro problema.</p>
+				</div>
 			</div>
-			<div class="col-sm">
-				<h2><span id="w1">El </span><span id="w2">problema</span></h2>
-				<p class="lead">Como todos sabemos, la Ciudad de México se encuentra sobre lo que solía ser el lago de Texcoco. Sin embargo, el lago se ha secado durante los últimos 500 años. Y para abastecerce de agua, la Ciudad ha recurrido a los acuiferos debajo de la misma, causando otro problema.</p>
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<h3><span id="w1">Hundimiento</span></h3>
-				<p class="lead">Como consecuencia de la explotación de los mantos acuiferos, la Ciudad de México se hunde constantemente. En algunas partes, la ciudad se hunde hasta 0.5 metros anualmente y gracias a la plancha de asfalto que cubre la ciudad no se puede reintegrar el agua de la lluvias a los mantos acuiferos.</p>
+	<section id="problem1">
+		{#if y/altura > 2}
+			<div class="row align-items-center" in:fly={{delay: 100, y: (altura)}} out:fly={{y: (altura)}}>
+				<div class="col-sm">
+					<h3><span id="w1">Hundimiento</span></h3>
+					<p class="lead">Como consecuencia de la explotación de los mantos acuiferos, la Ciudad de México se hunde constantemente. En algunas partes, la ciudad se hunde hasta 0.5 metros anualmente y gracias a la plancha de asfalto que cubre la ciudad no se puede reintegrar el agua de la lluvias a los mantos acuiferos.</p>
+				</div>
+				<div class="col-sm">
+					<!-- <LazyImage src="https://github.com/Exusai/a-qua/raw/master/imgs/hundimiento.png" alt="Hundimiento en la ciudad"  placeholder="https://via.placeholder.com/400/000000/FFFFFF/?text=IMG"/> -->
+					<img src="imgs/hundimiento.png" alt="Hundimiento en la ciudad" width="800">
+				</div>
 			</div>
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/hundimiento.png" alt="Hundimiento en la ciudad" width="800">
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/hundimiento2.png" alt="Hundimiento ejemplo 2" width="800">
+	<section id="problem2">
+		{#if y/altura > 3}
+			<div class="row align-items-center" transition:fade={{ delay: 100 }}>
+				<div class="col-sm">
+					<!-- <LazyImage src="https://github.com/Exusai/a-qua/raw/master/imgs/hundimiento2.png" alt="Hundimiento ejemplo 2"  placeholder="https://via.placeholder.com/400/000000/FFFFFF/?text=IMG"/> -->
+					<img src="imgs/hundimiento2.png" alt="Hundimiento ejemplo 2" width="800">
+				</div>
+				<div class="col-sm">
+					<!-- <h3><span id="w1">Hundimiento</span></h3> -->
+					<p class="lead">Muchos geólogos estiman que para finales del siglo, la Ciudad se habrá hundido entre 20 y 30 metros de donde se encuentra actualmente.</p>
+					<!-- <p class="lead"></p> -->
+				</div>
 			</div>
-			<div class="col-sm">
-				<!-- <h3><span id="w1">Hundimiento</span></h3> -->
-				<p class="lead">Muchos geólogos estiman que para finales del siglo, la Ciudad se habrá hundido entre 20 y 30 metros de donde se encuentra actualmente.</p>
-				<!-- <p class="lead"></p> -->
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<h3><span id="w1">Escasez </span><span id="w2">de </span><span id="w3">agua</span></h3>
-				<p class="lead">Debido a que la Ciudad no puede seguir extrayendo agua de su subsuelo esta importa el 40% de su suminstro de agua a través de un sistema de canales y tuberías.</p>
+	<section id="problem3">
+		{#if y/altura > 4}
+			<div class="row align-items-center" transition:fade={{ delay: 100 }}>
+				<div class="col-sm">
+					<h3><span id="w1">Escasez </span><span id="w2">de </span><span id="w3">agua</span></h3>
+					<p class="lead">Debido a que la Ciudad no puede seguir extrayendo agua de su subsuelo esta importa el 40% de su suminstro de agua a través de un sistema de canales y tuberías.</p>
+				</div>
+				<div class="col-sm">
+					<!-- <LazyImage src="https://github.com/Exusai/a-qua/raw/master/imgs/Canales.png" alt="Canales y tuberías de agua"  placeholder="https://via.placeholder.com/400/000000/FFFFFF/?text=IMG"/> -->
+					<img src="imgs/Canales.png" alt="Canales y tuberías de agua" width="600">
+				</div>
 			</div>
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/Canales.png" alt="Canales y tuberías de agua" width="800">
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/waterLoss.jpg" alt="Pérdidas de agua" width="800">
+	<section id="problem2">
+		{#if y/altura > 5}
+			<div class="row align-items-center" in:fly={{delay: 100, y: (altura)}} out:fly={{y: (altura)}}>
+				<div class="col-sm">
+					<!-- <LazyImage src="https://github.com/Exusai/a-qua/raw/master/imgs/waterLoss.jpg" alt="Pérdidas de agua" width="600" placeholder="https://via.placeholder.com/400/000000/FFFFFF/?text=IMG"/> -->
+					<img src="imgs/waterLoss.jpg" alt="Pérdidas de agua" width="600">
+				</div>
+				<div class="col-sm">
+					<p class="lead">Este sistema de canales es tan ineficiente que de cada litro de agua bombeado por el mismo, se estima que más de un tercio se pierde en el transporte. Sin mencionar que el hundimiento de la Ciudad causa que las tuberías se rompan constantemente.</p>
+				</div>
 			</div>
-			<div class="col-sm">
-				<p class="lead">Este sistema de canales es tan ineficiente que de cada litro de agua bombeado por el mismo, se estima que más de un tercio se pierde en el transporte. Sin mencionar que el hundimiento de la Ciudad causa que las tuberías se rompan constantemente.</p>
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<h3><span id="w1">Energía</span></h3>
-				<p class="lead">Al tener que importar tanta agua, la Ciudad de México utiliza tanta energía como la Ciudad de Puebla SOLAMENTE para bombear agua. Esto es debido a que el agua debe ser bombeada desde zonas menos elevadas que la ciudad.</p>
+	<section id="problem1">
+		{#if y/altura > 6}
+			<div class="row align-items-center" in:fly={{delay: 100, y: (altura)}} out:fly={{y: (altura)}}>
+				<div class="col-sm">
+					<h3><span id="w1">Energía</span></h3>
+					<p class="lead">Al tener que importar tanta agua, la Ciudad de México utiliza tanta energía como la Ciudad de Puebla SOLAMENTE para bombear agua. Esto es debido a que el agua debe ser bombeada desde zonas menos elevadas que la ciudad.</p>
+				</div>
+				<div class="col-sm">
+					<!-- <LazyImage src="https://github.com/Exusai/a-qua/raw/master/imgs/cutzamala-2.jpg" alt="Sistema de agua" width="600" placeholder="https://via.placeholder.com/400/000000/FFFFFF/?text=IMG"/> -->
+					<img src="imgs/cutzamala-2.jpg" alt="Sistema de agua" width="600">
+				</div>
 			</div>
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/cutzamala-2.jpg" alt="Sistema de agua" width="800">
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/water%20shortages.jpg" alt="Water shortages" width="800">
+	<section id="problem3">
+		{#if y/altura > 7}
+			<div class="row align-items-center" transition:fade={{ delay: 100 }}>
+				<div class="col-sm">
+					<img src="imgs/water%20shortages.jpg" alt="Water shortages" width="600">
+				</div>
+				<div class="col-sm">
+					<p class="lead">Por esta razón la ciudad sufre de tanta escasez de agua como si se encontrase en un desierto, a pesar de que recive incluso más lluvia que Londres.</p>
+				</div>
 			</div>
-			<div class="col-sm">
-				<p class="lead">Por esta razón la ciudad sufre de tanta escasez de agua como si se encontrase en un desierto, a pesar de que recive incluso más lluvia que Londres.</p>
-			</div>
-		</div>
+		{/if}
 	</section>
 
 	<section id="solution">
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<h2><span id="w1">Solución</span></h2>
-				<p class="lead">La solución que se propone consta de diversos sistemas distribuidos y aplicados por toda la ciudad. Estos estarían basados en el Computo en la Nube, IoT, Machine Learning y Big Data.</p>
+		{#if y/altura > 8}
+			<div class="row align-items-center" transition:fade={{ delay: 100 }}>
+				<div class="col-sm">
+					<h2><span id="w1">Solución</span></h2>
+					<p class="lead">La solución que se propone consta de diversos sistemas distribuidos y aplicados por toda la ciudad. Estos estarían basados en el Computo en la Nube, IoT, Machine Learning y Big Data.</p>
+				</div>
+				<div class="col-sm">
+					<img src="imgs/azure.png" alt="Smart water" width="400">
+				</div>
 			</div>
-			<div class="col-sm">
-				<img src="" alt="Smart water" width="800">
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<h3><span id="w1">Recolección </span><span id="w2">de </span><span id="w3">agua</span></h3>
-				<p class="lead">Se proponen diversos sitemas inteligentes de recolección de agua en las calles y edificios, los cules sean capaces de reingresar agua a los sistemas subterraneos o de abastecer a su respectivo edificio dependiedo de lo que la "nube" determine que sea más necesario.</p>
+	<section id="sol1">
+		{#if y/altura > 9}
+			<div class="row align-items-center" in:fly={{delay: 100, y: (altura)}} out:fly={{y: (altura)}}>
+				<div class="col-sm">
+					<h3><span id="w1">Recolección </span><span id="w2">de </span><span id="w3">agua</span></h3>
+					<p class="lead">Se proponen diversos sitemas inteligentes de recolección de agua en las calles y edificios, los cules sean capaces de reingresar agua a los sistemas subterraneos o de abastecer a su respectivo edificio dependiedo de lo que la "nube" determine que sea más necesario.</p>
+				</div>
+				<div class="col-sm">
+					<img src="imgs/rain%20water%20harvesting.webp" alt="Water harvesting" width="600">
+				</div>
 			</div>
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/rain%20water%20harvesting.webp" alt="Water harvesting" width="800">
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<h3><span id="w1">Reducir </span><span id="w2">desperdicio de </span><span id="w3">agua</span></h3>
-				<p class="lead">Se sabe que una porción importante del agua desperdiciada es causada por infraestructura deficiente en casas y edificios. Para abordar este problema se rediseñaría esta misma infraestructura pero con IoT y conección a la nube, de modo que las fugas puedan ser detectadas y reparadas lo más pronto posible.</p>
+	<section id="sol2">
+		{#if y/altura > 10}
+			<div class="row align-items-center" in:fly={{delay: 100, y: (altura)}} out:fly={{y: (altura)}}>
+				<div class="col-sm">
+					<h3><span id="w1">Reducir </span><span id="w2">desperdicio de </span><span id="w3">agua</span></h3>
+					<p class="lead">Se sabe que una porción importante del agua desperdiciada es causada por infraestructura deficiente en casas y edificios. Para abordar este problema se rediseñaría esta misma infraestructura pero con IoT y conección a la nube, de modo que las fugas puedan ser detectadas y reparadas lo más pronto posible.</p>
+				</div>
+				<div class="col-sm">
+					<img src="imgs/water%20iot.jpg" alt="Water IoT" width="600">
+				</div>
 			</div>
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/water%20iot.jpg" alt="Water IoT" width="800">
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
-		<div class="row align-items-center">
-			<div class="col-sm">
-				<h3><span id="w1">Distribución </span><span id="w2">de </span><span id="w3">agua</span></h3>
-				<p class="lead">De manera similar a las redes de distribución de energía de las ciudades inteligentes, la propuesta es tener una red que distribuya el agua en función de donde se necesita más o donde puede ser almacenada si es que no se necesita.</p>
+	<section id="sol3">
+		{#if y/altura > 11}
+			<div class="row align-items-center" transition:fade={{ delay: 100 }}>
+				<div class="col-sm">
+					<h3><span id="w1">Distribución </span><span id="w2">de </span><span id="w3">agua</span></h3>
+					<p class="lead">De manera similar a las redes de distribución de energía de las ciudades inteligentes, la propuesta es tener una red que distribuya el agua en función de donde se necesita más o donde puede ser almacenada si es que no se necesita.</p>
+				</div>
+				<div class="col-sm">
+					<img src="imgs/smat%20water.jpeg" alt="Smart grid" width="600">
+				</div>
 			</div>
-			<div class="col-sm">
-				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/smat%20water.jpeg" alt="Smart grid" width="800">
-			</div>
-		</div>
+		{/if}
 	</section>
 
-	<section>
+	<section id="about">
 		<h1><span id="w1">Acerca </span><span id="w2">de esta </span><span id="w3">página</span></h1>
 		<p class="lead">Algunas imágenes fueron tomadas de un video de RealLifeLore, muy recomendado.</p>
+		<br>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/eAL1kYjsVHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</section>
 
@@ -469,7 +505,7 @@
 		background-color: black;
 		/* Scroll Snap */
 		scroll-snap-align: center;
-		animation: fadeIn 2s;
+		animation: fadeIn 1s;
 	}
 
 	section h1 {
@@ -483,22 +519,57 @@
 		background: url('https://github.com/Exusai/a-qua/raw/master/imgs/BG1.png') no-repeat center center/cover;;	
 	}
 
+	section#problem {
+		margin: 0;
+		padding: 0;
+		background: url('/imgs/BG2.png') no-repeat center center/contain;;
+	}
+
+	section#problem1 {
+		margin: 0;
+		padding: 0;
+		background: url('/imgs/BG3.png') no-repeat center center/contain;;
+	}
+
+	section#problem2 {
+		margin: 0;
+		padding: 0;
+		background: url('/imgs/BG4.png') no-repeat center center/contain;;
+	}
+
+	section#problem3 {
+		margin: 0;
+		padding: 0;
+		background: url('/imgs/BG5.png') no-repeat center center/contain;;
+	}
+
+	section#solution {
+		margin: 0;
+		padding: 0;
+		background: url('/imgs/BG1.png') no-repeat center center/contain;;
+	}
+
+	section#sol1 {
+		margin: 0;
+		padding: 0;
+		background: url('/imgs/BG6.png') no-repeat center center/contain;;
+	}
+
+	section#sol2 {
+		margin: 0;
+		padding: 0;
+		background: url('/imgs/BG7.png') no-repeat center center/contain;;
+	}
+
+	section#sol3 {
+		margin: 0;
+		padding: 0;
+		background: url('/imgs/BG8.png') no-repeat center center/contain;;
+	}
+	
 	section#about {
 		margin: 0;
 		padding: 0;
-		background: black;
 	}
-
-	section#servicio {
-		margin: 0;
-		padding: 0;
-		background: url('https://source.unsplash.com/K2tdx2mFDHc/1600x900') no-repeat center center/cover;;
-	}
-
-	/* section#contact {
-		margin: 0;
-		padding: 0;
-		background: url('https://source.unsplash.com/2aAHlfDOhJM/1600x900') no-repeat center center/cover;;
-	} */
 
 </style>
