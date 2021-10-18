@@ -44,7 +44,6 @@
 				<li><a href="#home">Inicio</a></li>
 				<li><a href="#problem">El problema</a></li>
 				<li><a href="#solution">La Solución</a></li>
-				<!-- <li><a href="#servicio">Servicio</a></li> -->
 				<li><a href="https://exusai.github.io/Portfolio/">Otros proyectos</a></li>
 			</ul>
 			<div class="progress-container">
@@ -123,7 +122,7 @@
 			</div>
 			<div class="col-sm">
 				<h2><span id="w1">El </span><span id="w2">problema</span></h2>
-				<p class="lead">Como todos sabemos, la Ciudad de México se encuentra sobre lo que solía ser el lago de Texcoco. Sin embargo, el lago se ha secado durante los últimos 500 años. Y para abastecerce de <b>agua</b>, la Ciudad ha recurrido a los acuiferos debajo de la misma, causando otro problema.</p>
+				<p class="lead">Como todos sabemos, la Ciudad de México se encuentra sobre lo que solía ser el lago de Texcoco. Sin embargo, el lago se ha secado durante los últimos 500 años. Y para abastecerce de agua, la Ciudad ha recurrido a los acuiferos debajo de la misma, causando otro problema.</p>
 				<!-- <p class="lead"></p> -->
 			</div>
 		</div>
@@ -133,7 +132,7 @@
 		<div class="row">
 			<div class="col-sm">
 				<h3><span id="w1">Hundimiento</span></h3>
-				<p class="lead">Como consecuencia de la explotación de los mantos acuiferos, la Ciudad de México se hunde constantemente. En algunas partes, la ciudad se hunde hasta 0.5 metros anualmente.</p>
+				<p class="lead">Como consecuencia de la explotación de los mantos acuiferos, la Ciudad de México se hunde constantemente. En algunas partes, la ciudad se hunde hasta 0.5 metros anualmente y gracias a la plancha de asfalto que cubre la ciudad no se puede reintegrar el agua de la lluvias a los mantos acuiferos.</p>
 				<!-- <p class="lead"></p> -->
 			</div>
 			<div class="col-sm">
@@ -190,26 +189,76 @@
 		</div>
 	</section>
 
-
-	<!-- al no poder explotar el agua, la ciudad recurre a un ineficiente sistema de canales, pues estos deben elevar el agua primero, y debido al hundimineto de la ciudad estos se rompen contantemnte -->
-	<!-- solución distopica con la nube -->
-	<section id="servicio">
+	<section>
 		<div class="row">
 			<div class="col-sm">
-				Imagen bien cool
+				img
 			</div>
 			<div class="col-sm">
-				<h3>Energía</h3>
-				<p class="lead">La Ciudad de México utiliza tanta energía como toda la Ciudad de Puebla ÚNICAMENTE para abastecerce de al rededor del 40% de su suminstro de agua.</p>
-				<!-- <p class="lead">Pero ¿Por qué es esto?</p> -->
+				<p class="lead">Por esta razón la ciudad sufre de tanta escasez de agua como si se encontrase en un desierto, a pesar de que recive incluso más lluvia que Londres.</p>
 			</div>
 		</div>
 	</section>
-	<!-- <section id="contact">
-		<h1>Contact</h1>
-		<p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
-	</section> -->
 
+	<section id="solution">
+		<div class="row">
+			<div class="col-sm">
+				<h2><span id="w1">Solución</span></h2>
+				<p class="lead">La solución que se propone consta de diversos sistemas distribuidos y aplicados por toda la ciudad. Estos estarían basados en el Computo en la Nube, IoT, Machine Learning y Big Data.</p>
+			</div>
+			<div class="col-sm">
+				img
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="row">
+			<div class="col-sm">
+				<h3><span id="w1">Recolección </span><span id="w2">de </span><span id="w3">agua</span></h3>
+				<p class="lead">Se proponen diversos sitemas inteligentes de recolección de agua en las calles y edificios, los cules sean capaces de reingresar agua a los sistemas subterraneos o de abastecer a su respectivo edificio dependiedo de lo que la "nube" determine que sea más necesario.</p>
+			</div>
+			<div class="col-sm">
+				img
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="row">
+			<div class="col-sm">
+				<h3><span id="w1">Reducir </span><span id="w2">desperdicio de </span><span id="w3">agua</span></h3>
+				<p class="lead">Se sabe que una porción importante del agua desperdiciada es causada por infraestructura deficiente en casas y edificios. Para abordar este problema se rediseñaría esta misma infraestructura pero con IoT y conección a la nube, de modo que las fugas puedan ser detectadas y reparadas lo más pronto posible.</p>
+			</div>
+			<div class="col-sm">
+				img
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="row">
+			<div class="col-sm">
+				<h3><span id="w1">Distribución </span><span id="w2">de </span><span id="w3">agua</span></h3>
+				<p class="lead">De manera similar a las redes de distribución de energía de las ciudades inteligentes, la propuesta es tener una red que distribuya el agua en función de donde se necesita más o donde puede ser almacenada si es que no se necesita.</p>
+			</div>
+			<div class="col-sm">
+				img
+			</div>
+		</div>
+	</section>
+
+	<!-- <section>
+		<div class="row">
+			<div class="col-sm">
+				<h3><span id="w1">Almacenamiento </span><span id="w2">de </span><span id="w3">agua</span></h3>
+				<p class="lead">wea</p>
+			</div>
+			<div class="col-sm">
+				img
+			</div>
+		</div>
+	</section> -->
 
 </main>
 
@@ -303,6 +352,15 @@
 		}
 		100% {
 			opacity: 0;
+		}
+	}
+
+	@keyframes fadeIn {  
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
 		}
 	}
 
@@ -410,6 +468,7 @@
 		background-color: black;
 		/* Scroll Snap */
 		scroll-snap-align: center;
+		animation: fadeIn 2s;
 	}
 
 	section h1 {
@@ -420,7 +479,7 @@
 	section#home {
 		margin: 0;
 		padding: 0;
-		background: url('https://github.com/Exusai/a-qua/raw/master/imgs/BG1.png') no-repeat center center/cover;;
+		background: url('https://github.com/Exusai/a-qua/raw/master/imgs/BG1.png') no-repeat center center/cover;;	
 	}
 
 	section#about {
