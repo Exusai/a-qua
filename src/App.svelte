@@ -111,38 +111,33 @@
 			</div>
 		</div>
 	</section>
-	<!-- En la ciudad de méxico comienza a escacear el agua -->
-	<!-- diagramas del bideo ese -->
-	<!-- usar ia para recolectar agua -->
-	<!-- usar iot para aumentar la eficiencia de recolectar agua  -->
+
 	<section id="problem">
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
-				imagen pro
+				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/Mapa.png" alt="Mapa">
 			</div>
 			<div class="col-sm">
 				<h2><span id="w1">El </span><span id="w2">problema</span></h2>
 				<p class="lead">Como todos sabemos, la Ciudad de México se encuentra sobre lo que solía ser el lago de Texcoco. Sin embargo, el lago se ha secado durante los últimos 500 años. Y para abastecerce de agua, la Ciudad ha recurrido a los acuiferos debajo de la misma, causando otro problema.</p>
-				<!-- <p class="lead"></p> -->
 			</div>
 		</div>
 	</section>
 
 	<section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				<h3><span id="w1">Hundimiento</span></h3>
 				<p class="lead">Como consecuencia de la explotación de los mantos acuiferos, la Ciudad de México se hunde constantemente. En algunas partes, la ciudad se hunde hasta 0.5 metros anualmente y gracias a la plancha de asfalto que cubre la ciudad no se puede reintegrar el agua de la lluvias a los mantos acuiferos.</p>
-				<!-- <p class="lead"></p> -->
 			</div>
 			<div class="col-sm">
-				Imagen logo bien cool
+				<img src="" alt="">
 			</div>
 		</div>
 	</section>
 
 	<section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				Imagen logo bien cool
 			</div>
@@ -155,7 +150,7 @@
 	</section>
 
 	<section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				<h3><span id="w1">Escasez </span><span id="w2">de </span><span id="w3">agua</span></h3>
 				<p class="lead">Debido a que la Ciudad no puede seguir extrayendo agua de su subsuelo esta importa el 40% de su suminstro de agua a través de un sistema de canales y tuberías.</p>
@@ -167,7 +162,7 @@
 	</section>
 
 	<section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				img
 			</div>
@@ -178,7 +173,7 @@
 	</section>
 
 	<section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				<h3><span id="w1">Energía</span></h3>
 				<p class="lead">Al tener que importar tanta agua, la Ciudad de México utiliza tanta energía como la Ciudad de Puebla SOLAMENTE para bombear agua.</p>
@@ -190,7 +185,7 @@
 	</section>
 
 	<section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				img
 			</div>
@@ -201,7 +196,7 @@
 	</section>
 
 	<section id="solution">
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				<h2><span id="w1">Solución</span></h2>
 				<p class="lead">La solución que se propone consta de diversos sistemas distribuidos y aplicados por toda la ciudad. Estos estarían basados en el Computo en la Nube, IoT, Machine Learning y Big Data.</p>
@@ -213,7 +208,7 @@
 	</section>
 
 	<section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				<h3><span id="w1">Recolección </span><span id="w2">de </span><span id="w3">agua</span></h3>
 				<p class="lead">Se proponen diversos sitemas inteligentes de recolección de agua en las calles y edificios, los cules sean capaces de reingresar agua a los sistemas subterraneos o de abastecer a su respectivo edificio dependiedo de lo que la "nube" determine que sea más necesario.</p>
@@ -225,7 +220,7 @@
 	</section>
 
 	<section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				<h3><span id="w1">Reducir </span><span id="w2">desperdicio de </span><span id="w3">agua</span></h3>
 				<p class="lead">Se sabe que una porción importante del agua desperdiciada es causada por infraestructura deficiente en casas y edificios. Para abordar este problema se rediseñaría esta misma infraestructura pero con IoT y conección a la nube, de modo que las fugas puedan ser detectadas y reparadas lo más pronto posible.</p>
@@ -237,7 +232,7 @@
 	</section>
 
 	<section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				<h3><span id="w1">Distribución </span><span id="w2">de </span><span id="w3">agua</span></h3>
 				<p class="lead">De manera similar a las redes de distribución de energía de las ciudades inteligentes, la propuesta es tener una red que distribuya el agua en función de donde se necesita más o donde puede ser almacenada si es que no se necesita.</p>
@@ -249,7 +244,7 @@
 	</section>
 
 	<!-- <section>
-		<div class="row">
+		<div class="row align-items-center">
 			<div class="col-sm">
 				<h3><span id="w1">Almacenamiento </span><span id="w2">de </span><span id="w3">agua</span></h3>
 				<p class="lead">wea</p>
