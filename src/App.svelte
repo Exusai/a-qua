@@ -131,7 +131,7 @@
 				<p class="lead">Como consecuencia de la explotación de los mantos acuiferos, la Ciudad de México se hunde constantemente. En algunas partes, la ciudad se hunde hasta 0.5 metros anualmente y gracias a la plancha de asfalto que cubre la ciudad no se puede reintegrar el agua de la lluvias a los mantos acuiferos.</p>
 			</div>
 			<div class="col-sm">
-				<img src="" alt="">
+				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/hundimiento.png" alt="Hundimiento en la ciudad">
 			</div>
 		</div>
 	</section>
@@ -139,7 +139,7 @@
 	<section>
 		<div class="row align-items-center">
 			<div class="col-sm">
-				Imagen logo bien cool
+				<img src="https://github.com/Exusai/a-qua/raw/master/imgs/hundimiento2.png" alt="Hundimiento ejemplo 2">
 			</div>
 			<div class="col-sm">
 				<!-- <h3><span id="w1">Hundimiento</span></h3> -->
@@ -176,7 +176,7 @@
 		<div class="row align-items-center">
 			<div class="col-sm">
 				<h3><span id="w1">Energía</span></h3>
-				<p class="lead">Al tener que importar tanta agua, la Ciudad de México utiliza tanta energía como la Ciudad de Puebla SOLAMENTE para bombear agua.</p>
+				<p class="lead">Al tener que importar tanta agua, la Ciudad de México utiliza tanta energía como la Ciudad de Puebla SOLAMENTE para bombear agua. Esto es debido a que el agua debe ser bombeada desde zonas menos elevadas que la ciudad.</p>
 			</div>
 			<div class="col-sm">
 				img
@@ -241,6 +241,10 @@
 				img
 			</div>
 		</div>
+	</section>
+
+	<section>
+		<h1><span id="w1">Acerca </span><span id="w2">de esta </span><span id="w3">página</span></h1>
 	</section>
 
 	<!-- <section>
